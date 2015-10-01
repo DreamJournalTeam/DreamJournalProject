@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linear_layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Dream Title:"
+            android:id="@+id/dream_information_title_textview"
+            android:textSize="10pt"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dream_information_title_edittext"
+            android:textSize="10pt"
+            android:layout_marginTop="10dp"
+            />
+
+    </LinearLayout>
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Is Nightmare"
+        android:checked="false"
+        android:id="@+id/dream_information_nightmare_checkbox"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="60dp"
+        android:textSize="10pt" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Is Repeat"
+        android:checked="false"
+        android:id="@+id/dream_information_repeat_checkbox"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="100dp"
+        android:textSize="10pt" />
+
+    <LinearLayout
+        android:id="@+id/linear_layout_tags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="130dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Enter tags here:"
+            android:id="@+id/dream_information_tags_textview"
+            android:textSize="10pt"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dream_information_tags_edittext"
+            android:textSize="10pt"
+            android:layout_marginTop="10dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_nouns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="170dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Enter proper nouns here:"
+            android:id="@+id/dream_information_nouns_textview"
+            android:textSize="10pt"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dream_information_nouns_edittext"
+            android:textSize="10pt"
+            android:layout_marginTop="10dp"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Answer questions about the dream"
+        android:id="@+id/activity_dream_info_questions_button"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="345dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Draw your dream!"
+        android:id="@+id/activity_dream_info_draw_button"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="110dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/linear_layout_saveandcancel_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="450dp"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Save Dream"
+            android:id="@+id/activity_dream_info_save_button"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Cancel"
+            android:id="@+id/activity_dream_info_cancel_button"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
