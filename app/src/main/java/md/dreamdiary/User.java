@@ -1,11 +1,25 @@
 package md.dreamdiary;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by michaeldiamond on 9/23/15.
  */
-public class User {
+public class User implements Serializable{
 
     ArrayList<Dream> dreams = new ArrayList();
+    boolean isFirstLogin = true;
+
+    public User () {
+
+    }
+
+    public void addDream(Dream dream) {
+        dreams.add(dream);
+    }
+
+    public void hasLoggedIn() {
+        isFirstLogin = false;
+    }
 }

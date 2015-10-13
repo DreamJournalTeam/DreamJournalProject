@@ -37,7 +37,7 @@ public class Dream implements Serializable {
 
     public Dream() {
 
-        text = "";
+        text = "test";
         title = "";
         date = "insert date here";
 
@@ -104,12 +104,8 @@ public class Dream implements Serializable {
     }
 
     // isRepeat
-    public void setAsRepeat() {
-        isRepeat = true;
-    }
-
-    public void setNotRepeat() {
-        isRepeat = false;
+    public void setIfRepeat(Boolean input) {
+        isRepeat = input;
     }
 
     public Boolean getIfRepeat() {
@@ -117,12 +113,8 @@ public class Dream implements Serializable {
     }
 
     // nightmare
-    public void setNightmare() {
-        nightmare = true;
-    }
-
-    public void setNotNightmare() {
-        nightmare = false;
+    public void setNightmare(Boolean input) {
+        nightmare = input;
     }
 
     public Boolean getIfNightmare() {
@@ -169,7 +161,6 @@ public class Dream implements Serializable {
     }
 
     // question answers
-
     public void setQ1Answer(String input) {
         q1Answer = input;
     }
