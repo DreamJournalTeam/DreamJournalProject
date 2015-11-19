@@ -187,6 +187,8 @@ public class DrawActivity extends AppCompatActivity implements OnClickListener {
                     //save drawing
                     //Dream.setDrawing(this?)
                     //return to previous screen
+                    drawView.setDrawingCacheEnabled(true);
+
                 }
             });
             saveDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
