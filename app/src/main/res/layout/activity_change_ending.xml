@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:text="Click in the box to write a new ending"/>
+        android:text="Click in the box to write about your dream"/>
 
 
     <EditText
