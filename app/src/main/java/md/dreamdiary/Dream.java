@@ -15,6 +15,12 @@ public class Dream implements Serializable {
     String title;
     String date;
 
+    String newEnding;
+
+    //Image drawing
+
+    DreamType type;
+
     int timesRepeated;
 
     Boolean nightmare;
@@ -43,6 +49,9 @@ public class Dream implements Serializable {
 
         timesRepeated = 0;
 
+        newEnding = "";
+
+        type = DreamType.NONE;
         nightmare = false;
         drawing = false;
         isRepeat = false;
@@ -184,4 +193,15 @@ public class Dream implements Serializable {
     public String getQ3Answer() {
         return q3Answer;
     }
+
+    // DreamType getter/setter
+    public DreamType getType() {return type;}
+
+    public void setType(DreamType t) {type = t;}
+
+    public String getNewEnding() {return newEnding;}
+
+    public void setNewEnding(String newNew) {newEnding = newNew;}
+
+
 }
