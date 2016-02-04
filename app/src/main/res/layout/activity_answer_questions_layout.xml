@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Home"
+    android:background="#CDD1C4">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What was your first thought after writing the dream?"
+        android:textSize="10pt"
+        android:id="@+id/QuestionTextview1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:id="@+id/QuestionEdittext1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/QuestionTextview1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_height="80dp"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/QuestionTextview2"
+        android:text="How did you feel during the dream?"
+        android:textSize="10pt"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:id="@+id/QuestionEdittext2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/QuestionTextview1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_height="80dp"
+        android:layout_marginTop="120dp"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/QuestionTextview3"
+        android:text="What was left unfinished?"
+        android:textSize="10pt"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:id="@+id/QuestionEdittext3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/QuestionTextview1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_height="80dp"
+        android:layout_marginTop="240dp"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_questions_save_button"
+        android:src="@drawable/saveicon"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_questions_cancel_button"
+        android:src="@drawable/cancelicon"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/activity_questions_save_button"
+        android:layout_toStartOf="@+id/activity_questions_save_button" />
+
+
+</RelativeLayout>

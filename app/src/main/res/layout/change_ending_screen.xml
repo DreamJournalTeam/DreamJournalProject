@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Home"
+    android:background="#CDD1C4">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="To change the ending of your dream, select the text you wish to remove, delete it, and type in the new ending. If you decide not to change the ending of your dream, hit the back button to return to the previous screen. "
+        android:id="@+id/change_ending_textView" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:background="@color/bright_foreground_inverse_material_light"
+        android:id="@+id/change_ending_edittext"
+        android:gravity="top|left"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/change_ending_textView"
+        android:layout_above="@+id/change_ending_save_button" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:id="@+id/relativeLayout">
+
+    </RelativeLayout>
+
+    <Button
+        android:background="@drawable/button"
+        android:id="@+id/change_ending_save_button"
+        android:text="Change Ending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/button_text"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>
