@@ -51,6 +51,8 @@ public class Search extends AppCompatActivity {
         final ArrayList<Integer> indices = new ArrayList();
 
 
+        // Set our on click listener for the search button.
+        // What it does depends on what was selected in the spinner.
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +64,7 @@ public class Search extends AppCompatActivity {
 
                 Object selected = spinner.getSelectedItem();
 
+                // Search by title
                 if (selected == spinner.getItemAtPosition(0)) {
                     for (int i = 0; i < theDreams.size(); i++) {
                         if (theDreams.get(i).getTitle().contains(term)) {
@@ -69,6 +72,7 @@ public class Search extends AppCompatActivity {
                             indices.add(i);
                         }
                     }
+                // Search by date
                 } else if (selected == spinner.getItemAtPosition(1)) {
 
                     for (int i = 0; i < theDreams.size(); i++) {
@@ -76,7 +80,7 @@ public class Search extends AppCompatActivity {
                             results.add(theDreams.get(i));
                         }
                     }
-
+                // Search by tags
                 } else if (selected == spinner.getItemAtPosition(2)) {
 
                     for (int i = 0; i < theDreams.size(); i++) {
@@ -84,7 +88,7 @@ public class Search extends AppCompatActivity {
                             results.add(theDreams.get(i));
                         }
                     }
-
+                // Search by nouns
                 } else if (selected == spinner.getItemAtPosition(3)) {
 
                     for (int i = 0; i < theDreams.size(); i++) {

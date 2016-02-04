@@ -20,8 +20,6 @@ public class Dream implements Serializable {
 
     String newEnding;
 
-    //Image drawing
-
     DreamType type;
 
     int timesRepeated;
@@ -36,8 +34,6 @@ public class Dream implements Serializable {
 
     String q1Answer, q2Answer, q3Answer;
 
-
-    // Do something with dream type
 
 
     public Dream() {

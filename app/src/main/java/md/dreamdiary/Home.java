@@ -46,15 +46,20 @@ public class Home extends Activity {
             u.hasLoggedIn();
         }
 
+        // Load a list of all the user's dreams
         final ArrayList<Dream> theDreams = u.getList();
 
+        // Set the dream adapter
         DreamAdapter d = new DreamAdapter(
                 this,
                 R.layout.list_item,
                 theDreams);
 
+        // Create a listview then show the dreams using the listview and adapter
         lv = (ListView) findViewById(R.id.dreamsListView);
         lv.setAdapter(d);
+
+        // If we click on one of the dreams, we can edit it
         lv.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(final AdapterView<?> adapter, View v, final int position,
@@ -70,8 +75,7 @@ public class Home extends Activity {
             }
         });
 
-
-
+        // Record button
         recordButton = (ImageButton) findViewById(R.id.home_record_dream_button);
         recordButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +86,7 @@ public class Home extends Activity {
             }
         });
 
+        // Search button
         searchButton = (ImageButton) findViewById(R.id.home_search_log_button);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override

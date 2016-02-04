@@ -108,8 +108,6 @@ public class OtherDreamInfo extends Activity {
         isNightmare = dream.getIfNightmare();
 
 
-
-
         // This is our check box to see if it's a nightmare
         // It starts out checked/unchecked based on whether or not the dream is a nightmare
         // What happens if we click the nightmare checkbox?
@@ -235,25 +233,14 @@ public class OtherDreamInfo extends Activity {
             }
         });
 
-//        draw = (ImageButton) findViewById(R.id.activity_dream_info_draw_button);
-//        draw.setEnabled(true);
-//        draw.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent go = new Intent(OtherDreamInfo.this, DrawActivity.class);
-//                go.putExtra("dream", dream);
-//                go.putExtra("user", u);
-//                startActivity(go);
-//
-//            }
-//        });
-                // idk what we're doing with draw yet
-
-                save = (ImageButton) findViewById(R.id.activity_dream_info_save_button);
+        // Click the save button to save
+        save = (ImageButton) findViewById(R.id.activity_dream_info_save_button);
         save.setEnabled(true);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // Save all the fields
 
                 dream.setTitle(title.getText().toString());
                 dream.setNightmare(isNightmare);
@@ -292,10 +279,8 @@ public class OtherDreamInfo extends Activity {
             });
 
 
-
-            cancel=(ImageButton)
-
-            findViewById(R.id.activity_dream_info_cancel_button);
+            // Click cancel to go to the home screen
+            cancel=(ImageButton) findViewById(R.id.activity_dream_info_cancel_button);
 
             cancel.setEnabled(true);
             cancel.setOnClickListener(new View.OnClickListener()

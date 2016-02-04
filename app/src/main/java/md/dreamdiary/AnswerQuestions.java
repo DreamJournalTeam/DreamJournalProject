@@ -30,12 +30,15 @@ public class AnswerQuestions extends Activity {
         setContentView(R.layout.activity_answer_questions_layout);
         setTitle("Answer Questions About Your Dream");
 
+        // Load in the working dream
         Bundle extras = getIntent().getExtras();
         dream = (Dream) extras.getSerializable("dream");
 
+        // Initialize buttons
         Save = (ImageButton) findViewById(R.id.activity_questions_save_button);
-            Cancel = (ImageButton) findViewById(R.id.activity_questions_cancel_button);
+        Cancel = (ImageButton) findViewById(R.id.activity_questions_cancel_button);
 
+        // Initialize question fields
         q1 = (EditText) findViewById(R.id.QuestionEdittext1);
         q2 = (EditText) findViewById(R.id.QuestionEdittext2);
         q3 = (EditText) findViewById(R.id.QuestionEdittext3);
@@ -43,6 +46,7 @@ public class AnswerQuestions extends Activity {
         sprefs = PreferenceManager
                 .getDefaultSharedPreferences(this.getApplicationContext());
 
+        // Get the local user
         u = (User) getIntent().getSerializableExtra("user");
 
         // Read in previously saved answer to question 1
@@ -84,6 +88,7 @@ public class AnswerQuestions extends Activity {
 
         }
 
+        // Cancel button
         Cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,24 +97,28 @@ public class AnswerQuestions extends Activity {
             }
         });
 
+        // Save button
         Save.setEnabled(true);
         Save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent go = new Intent(AnswerQuestions.this, Home.class);
 
+                // Save changes to question 1
                 if(q1.getText().toString() == " ") {
                     dream.setQ1Answer("Did not answer");
                 }
 
                 else { dream.setQ1Answer(q1.getText().toString()); }
 
+                // Save changes to question 2
                 if(q2.getText().toString() == " ") {
                     dream.setQ2Answer("Did not answer");
                 }
 
                 else { dream.setQ2Answer(q1.getText().toString()); }
 
+                // Save changes to question 3
                 if(q3.getText().toString() == " ") {
                     dream.setQ3Answer("Did not answer");
                 }
@@ -118,6 +127,7 @@ public class AnswerQuestions extends Activity {
                 
                 u.addDream(dream);
 
+                // Save the dream to the user
                 SharedPreferences.Editor prefsEditor = sprefs.edit();
                 Gson gson = new Gson();
                 String json = gson.toJson(u);

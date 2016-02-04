@@ -32,7 +32,7 @@ public class ChangeEnding extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.change_ending_screen);
 
-
+        // Initialize the current dream and user
         dream = (Dream) getIntent().getSerializableExtra("dream");
         u = (User) getIntent().getSerializableExtra("user");
         sprefs = PreferenceManager
@@ -42,19 +42,23 @@ public class ChangeEnding extends AppCompatActivity {
         ArrayList<Dream> testing = u.getList();
         System.out.println(testing.size());
 
-
+        // Get the text of the dream
         text = (EditText) findViewById(R.id.change_ending_edittext);
 
+        // Put the text of the dream in the textfield
         try {
             text.setText(dream.getText());
         } catch (NullPointerException e) {
 
         }
 
+        // Change button
         change = (Button) findViewById(R.id.change_ending_save_button);
         change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // Save the changes to the dream
                 dream.setText(text.getText().toString());
                 Intent go = new Intent(ChangeEnding.this, OtherDreamInfo.class);
                 go.putExtra("dream", dream);

@@ -57,15 +57,17 @@ public class EditDream extends Activity {
 
         index = (int) getIntent().getSerializableExtra("index");
 
-
+        // Initialize and load the title
         final EditText title = (EditText) findViewById(R.id.view_dream_title_edit);
         title.setText(dream.getTitle());
         title.setEnabled(false);
 
+        // Initialize and load the date
         final EditText date = (EditText) findViewById(R.id.view_dream_date_edit);
         date.setText(dream.getDate());
         date.setEnabled(false);
 
+        // Initialize and load the tags
         final EditText tags = (EditText) findViewById(R.id.view_dream_tags_edit);
         String tempTagString = dream.getTags().toString();
         tempTagString = tempTagString.substring(1, tempTagString.length() - 1);
@@ -73,6 +75,7 @@ public class EditDream extends Activity {
         tags.setText(tempTagString);
         tags.setEnabled(false);
 
+        // Initialize and load the nouns
         final EditText nouns = (EditText) findViewById(R.id.view_dream_nouns_edit);
         String tempNounString = dream.getNouns().toString();
         tempNounString = tempNounString.substring(1, tempNounString.length() - 1);
@@ -80,34 +83,41 @@ public class EditDream extends Activity {
         nouns.setText(tempNounString);
         nouns.setEnabled(false);
 
-
+        // Initialize and load the text of the dream
         final EditText content = (EditText) findViewById(R.id.view_dream_text_edit);
         content.setText(dream.getText());
         content.setEnabled(false);
 
+        // Initialize and load the answer to question 1
         final EditText q1 = (EditText) findViewById(R.id.show_dream_q1_answer);
         q1.setText(dream.getQ1Answer());
         q1.setEnabled(false);
 
+        // Initialize and load the answer to question 2
         final EditText q2 = (EditText) findViewById(R.id.show_dream_q2_answer);
         q2.setText(dream.getQ2Answer());
         q2.setEnabled(false);
 
+        // Initialize and load the answer to question 3
         final EditText q3 = (EditText) findViewById(R.id.show_dream_q3_answer);
         q3.setText(dream.getQ3Answer());
         q3.setEnabled(false);
 
+        // Initialize the checkbox for whether or not the dream is a nightmare
         final CheckBox nightmare = (CheckBox) findViewById(R.id.show_dream_nightmare);
         nightmare.setChecked(dream.getIfNightmare());
         nightmare.setEnabled(false);
 
+        // Initialize the checkbox for whether or not the dream is a repeat
         final CheckBox repeat = (CheckBox) findViewById(R.id.show_dream_repeat);
         repeat.setChecked(dream.getIfRepeat());
         repeat.setEnabled(false);
 
+        // Initialize the edit and save buttons
         final ImageButton edit = (ImageButton) findViewById(R.id.edit_dream_button);
         final ImageButton save = (ImageButton) findViewById(R.id.save_dialog_button);
 
+        // Click the edit button to make the fields editable
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,6 +134,7 @@ public class EditDream extends Activity {
             }
         });
 
+        // Click the nightmare checkbox to change whether or not the dream was a nightmare
         nightmare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,6 +146,7 @@ public class EditDream extends Activity {
             }
         });
 
+        // Click the repeat checkbox to change whether or not the dream was a repeat
         repeat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -148,10 +160,12 @@ public class EditDream extends Activity {
             }
         });
 
+        // Save
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                // Save all fields
                 dream.setTitle(title.getText().toString());
                 dream.setDate(date.getText().toString());
 
@@ -175,8 +189,7 @@ public class EditDream extends Activity {
                 dream.setQ3Answer(q3.getText().toString());
 
 
-
-
+                // Insert changed dream into the user then save the user
                 u.getList().set(index, dream);
                 SharedPreferences.Editor prefsEditor = sprefs.edit();
                 Gson gson = new Gson();

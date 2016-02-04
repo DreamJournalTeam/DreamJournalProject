@@ -97,7 +97,7 @@ public class RecordText extends Activity {
             }
         });
 
-
+        // Hit this button to save your dream with just the text
         save = (ImageButton) findViewById(R.id.enter_dream_save_button);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
